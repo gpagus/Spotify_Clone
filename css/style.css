@@ -1,0 +1,430 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green: #1db954;
+  --dark-gray: #3e3e3e;
+  --white: #ffffff;
+  --black: #282828;
+  --very-dark-gray: #171717;
+  --light-gray: #a8a8a8;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  color: #f2f2f2;
+}
+
+#content {
+  height: 90vh;
+  display: flex;
+}
+
+aside {
+  height: inherit;
+  width: 25%;
+  background-color: var(--very-dark-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+
+}
+
+main {
+  height: inherit;
+  width: 75%;
+  background-color: var(--black);
+}
+
+footer {
+  background-color: var(--dark-gray);
+  height: 10vh;
+  padding: 0 20px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#window-buttons {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.button {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.close {
+  background-color: #ff5f56;
+}
+
+.minimize {
+  background-color: #ffbd2e;
+}
+
+.maximize {
+  background-color: #27c93f;
+}
+
+.button:hover {
+  filter: brightness(90%);
+}
+
+.filter-container {
+  background-color: var(--dark-gray);
+  color: var(--light-gray);
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.filter-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.filter-content {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: bold;
+}
+
+.filter-item {
+  padding: 5px 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.filter-item:hover {
+  color: var(--green);
+}
+
+#canvas {
+  display: flex;
+  justify-content: center;
+  height: 230px;
+  background-color: var(--black);
+  box-shadow: inset -10px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+#canvas img {
+  height: 100%;
+
+}
+
+#top {
+  background-color: #1d1d1d;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-bar {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 5px 10px;
+  background-color: #2d2d2d;
+  border: none;
+  color: #fff;
+}
+
+.music-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.pause-button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-icon img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+#header {
+  box-shadow: inset 0px -20px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+#header-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 30px 15px 30px;
+
+}
+
+#header-2 {
+  margin: 0 30px 0 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 35px;
+}
+
+#search-bar input {
+  width: 100%;
+  padding: 10px 10px 10px 30px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  background: url('../images/search.png') no-repeat left center;
+  background-size: 22px;
+  background-color: white;
+}
+
+
+#add-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#add-btn img {
+  filter: invert(1);
+  width: 30px;
+}
+
+#profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+#profile img {
+  width: 35px;
+  border-radius: 40px;
+}
+
+#buttons {
+  display: flex;
+  gap: 10px;
+}
+
+#play,
+.form-container button {
+  background-color: var(--green);
+  color: white;
+  font-weight: bold;
+  border: none;
+  letter-spacing: 1px;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.music-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+  font-size: 14px;
+}
+
+.music-table th,
+.music-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.music-table th {
+  color: var(--light-gray);
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+
+.music-table th img {
+  filter: contrast(0);
+}
+
+/* ADD SONG WINDOW */
+
+#addSong {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 20%;
+  top: 10%;
+  overflow: auto;
+  box-shadow: 0px 0px 20px 0px var(--green);
+  background-color: #f2f2f2;
+  color: var(--black);
+  width: 60%;
+  border-radius: 20px;
+  padding: 15px;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.form-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-container label {
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+}
+
+
+input[type=text],
+input[type=file] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#list {
+  max-height: 701px;
+  overflow-y: auto;
+}
+
+.music-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.music-table thead {
+  position: sticky;
+  top: 0;
+  background-color: var(--black);
+  z-index: 1;
+  box-shadow: 0 1px 0px 0px var(--dark-gray);
+}
+
+.music-table th:first-child{
+  width: 50px;
+}
+
+.music-table th, .music-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+#song-description {
+  width: 10vw;
+}
+
+.play-pause-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+tr:hover {
+  background-color: var(--very-dark-gray);
+}
+tr:hover .play-pause-btn {
+  display: inline-block;
+}
+
+.play-pause-btn img {
+  width: 24px;
+  filter: invert(0.9);
+}
+
+#volume-option{
+  display: flex;
+  gap: 5px;
+
+}
+
+#volume-option img{
+  filter: invert(0.9);
+}
+
+#music-options{
+  display: flex;
+  gap: 15%;
+  justify-content: center;
+  align-items: center;
+}
+
+#music-options img{
+  filter: invert(0.9);
+  width: 20px;
+}
+
+#music-options>button:nth-child(3)>img{
+  width: 35px;
+}
+
+#music-player{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.time-bar {
+  width: 583px;
+  height: 8px;
+  background-color: #555;
+  border-radius: 4px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #fff;
+  width: 0%;
+  border-radius: 4px;
+}
+
+.time-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.current-time,
+.total-time {
+  font-weight: bold;
+}
+

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+  <div id="content">
+    <aside>
+      <div id="aside-1">
+        <div id="window-buttons">
+          <div class="button close" title="Close"></div>
+          <div class="button minimize" title="Minimize"></div>
+          <div class="button maximize" title="Maximize"></div>
+        </div>
+        <div class="filter-container">
+          <div class="filter-header">
+            <span class="toggle-icon">▼</span>
+            <p>Filtros</p>
+          </div>
+          <div class="filter-content">
+            <p class="filter-item">Todos</p>
+            <p class="filter-item">Favoritos</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="canvas">
+
+      </div>
+    </aside>
+    <main>
+      <div id="header">
+
+        <div id="header-1">
+          <div id="search-bar">
+            <input type="text" placeholder="Search">
+          </div>
+          <div id="profile">
+            <img src="./images/yoda.jpg" alt="">
+            <h2>Agus</h2>
+          </div>
+        </div>
+
+        <div id="header-2">
+          <h1>Music</h1>
+          <div id="buttons">
+            <button id="play">
+              PLAY
+            </button>
+            <button id="add-btn">
+              <img src="./images/add.png" alt="add">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="list">
+        <table class="music-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>TITLE</th>
+              <th>ARTIST</th>
+              <th><img src="./images/duration.png" alt=""></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+  <footer>
+    <div id="song-description">
+      <p>Canción actual</p>
+      <p>Artista</p>
+    </div>
+    <div id="music-player">
+      <div id="music-options">
+        <button><img src="./images/loop.png" alt="loop"></button>
+        <button><img src="./images/skip-previous.png" alt="skip-previous"></button>
+        <button><img src="./images/play.png" alt="play"></button>
+        <button><img src="./images/skip-next.png" alt="skip-next"></button>
+        <button><img src="./images/shuffle.png" alt="shuffle"></button>
+      </div>
+      <div class="time-bar">
+        <div class="progress"></div>
+        <div class="time-labels">
+          <span class="current-time">0:00</span>
+          <span class="total-time">0:00</span>
+        </div>
+      </div>
+    </div>
+    <div id="volume-option">
+      <img src="./images/volume-low.png" alt="volume icon" id="volume-icon">
+      <input type="range" id="volumen-range">
+    </div>
+  </footer>
+
+</body>
+<div id="addSong">
+  <button id="addSong-close"><img src="./images/close.png" alt=""></button>
+  <div class="form-container">
+    <form>
+      <label for="song-file">Añadir nueva canción</label>
+      <input type="file" id="song-file" name="song-file">
+
+      <label for="title">Título</label>
+      <input type="text" id="title" name="title" placeholder="Ingresa el título">
+
+      <label for="author">Autor</label>
+      <input type="text" id="author" name="author" placeholder="Ingresa el autor">
+
+      <label for="cover-image">Imagen de portada</label>
+      <input type="file" id="cover-image" name="cover-image">
+
+      <button type="submit">Subir</button>
+    </form>
+  </div>
+</div>
+
+</html>

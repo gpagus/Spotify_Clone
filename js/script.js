@@ -627,7 +627,7 @@ async function renderSearchResults(songs) {
     row.innerHTML = `
       <td>
         <button class="play-pause-btn" data-id="${song.id}">
-          <img src="./images/play.png" alt="Play/Pause">
+          <img src="./images/play-list.png" alt="Play/Pause">
         </button>
       </td>
       <td>${song.title}</td>
